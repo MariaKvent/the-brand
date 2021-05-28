@@ -10,6 +10,8 @@ $color-accent: #f16d7f;
 $color-light: #9f9f9f;
 $color-card-text: #5d5d5d;
 $color-card-bg: #f8f8f8;
+$color-input: #e1e1e1;
+$color-light-text: #fbfbfb;
 
 // font
 
@@ -236,7 +238,8 @@ body {
 }
 
 .parts {
-    padding: 65px 0 31px;
+    padding-top: 65px;
+    padding-bottom: 31px;
 
     &__list {
         margin: 0 -15px -30px;
@@ -317,7 +320,8 @@ body {
 }
 
 .goods {
-    padding: 65px 0 31px;
+    padding-top: 65px;
+    padding-bottom: 31px;
     display: flex;
     flex-direction: column;
 
@@ -441,7 +445,8 @@ body {
 }
 
 .advantages {
-    padding: 103px 0;
+    padding-top: 103px;
+    padding-bottom: 103px;
     background-color: $color-main-dark2;
 
     &__list {
@@ -467,7 +472,7 @@ body {
         font-weight: 400;
         font-size: 20px;
         line-height: 24px;
-        color: #fbfbfb;
+        color: $color-light-text;
         text-align: center;
         margin: 0 auto 16px;
     }
@@ -478,12 +483,179 @@ body {
         font-size: 14px;
         line-height: 17px;
         text-align: center;
-        color: #fbfbfb;
+        color: $color-light-text;
         margin: 0 auto;
     }
+}
+
+.subscribe {
+    padding-top: 86px;
+    padding-bottom: 126px;
+    background: url("img/subscribe-bg.jpg") no-repeat;
+    background-size: cover;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(244, 244, 244, 0.7);
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__quote {
+        max-width: 360px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__quote-img {
+        margin-bottom: 30px;
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    &__quote-text {
+        text-align: center;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: $color-main-dark2;
+        
+        p {
+            margin: 0;
+        }
+
+        span {
+            font-style: italic;
+        }
+    }
+
+    &__form {
+        max-width: 557px;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        margin: 0 auto;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 40px;
+        text-align: center;
+        color: $color-main-dark2;
+    }
+
+    &__text {
+        margin: 0 auto;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        text-align: center;
+        color: $color-main-dark2;
+    }
+
+    form {
+        margin-top: 32px;
+        width: 356px;
+        border-radius: 50px;
+        overflow: hidden;
+        display: flex;
+    }
+
+    input {
+        width: 256px;
+        background: $color-input;
+        border: none;
+        padding: 7px 22px;
+        font-size: 14px;
+        line-height: 17px;
+        color: $color-main-dark2;
+        opacity: 0.67;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__button {
+        background-color: $color-accent;
+        flex-grow: 1;
+        min-height: 49px;
+        font-size: 14px;
+        line-height: 17px;
+        color: $color-white;
+    }
+
+
 }
 
 .footer {
     background-color: $color-main-dark2;
     min-height: 79px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__info {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        max-width: 45%;
+    }
+
+    &__info-item {
+        font-size: 16px;
+        line-height: 19px;
+        color: $color-light-text;
+        margin-right: 10px;
+    }
+
+    &__social {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        max-width: 45%;
+        margin: 0 -4px -8px;
+    }
+
+    &__social-item {
+        margin: 0 4px 8px;
+    }
+
+    &__social-link {
+        width: 32px;
+        height: 32px;
+        background-color: $color-white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
