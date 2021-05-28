@@ -7,10 +7,17 @@ $color-main-dark: #222222;
 $color-main-dark2: #222224;
 $color-hero-bg: #f1e4e6;
 $color-accent: #f16d7f;
+$color-light: #9f9f9f;
+$color-card-text: #5d5d5d;
+$color-card-bg: #f8f8f8;
 
 // font
 
 $font-family--main: "Lato", "Arial", sans-serif;
+
+// transition
+
+$transition: 0.3s ease;
 
 // сброс стилей
 
@@ -211,6 +218,7 @@ body {
         font-weight: 900;
         font-size: 48px;
         line-height: 58px;
+        text-transform: uppercase;
         margin: 0;
     }
 
@@ -218,6 +226,7 @@ body {
         font-weight: 700;
         font-size: 32px;
         line-height: 38px;
+        text-transform: uppercase;
         margin: 0;
 
         span {
@@ -226,8 +235,8 @@ body {
     }
 }
 
-.goods {
-    padding: 65px 0 40px;
+.parts {
+    padding: 65px 0 31px;
 
     &__list {
         margin: 0 -15px -30px;
@@ -292,6 +301,7 @@ body {
         margin: 0;
         font-size: 16px;
         line-height: 19px;
+        text-transform: uppercase;
         color: $color-white;
         text-align: center;
     }
@@ -300,8 +310,176 @@ body {
         margin: 0;
         font-size: 24px;
         line-height: 28px;
+        text-transform: uppercase;
         color: $color-accent;
         text-align: center;
+    }
+}
+
+.goods {
+    padding: 65px 0 31px;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        margin: 0 0 6px;
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    &__text {
+        margin: 0 0 48px;
+        font-size: 14px;
+        line-height: 17px;
+        color: $color-light;
+        text-align: center;
+    }
+
+    &__list {
+        margin: 0 -15px -30px;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+    }
+
+    &__item {
+        margin: 0 15px 30px;
+        width: calc(100% / 3 - 30px);
+        background-color: $color-card-bg;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: $color-black;
+
+        &:hover .goods__hover {
+            opacity: 1;
+        }
+    }
+
+    &__img {
+        position: relative;
+        height: 420px;
+
+        img {
+            object-fit: contain;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__hover {
+        opacity: 0;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(58, 56, 56, 0.86);
+        transition: opacity $transition;
+    }
+
+    &__add {
+        border: 1px solid $color-white;
+        padding: 10px 13px;
+        max-width: 80%;
+
+        span {
+            font-size: 14px;
+            line-height: 17px;
+            color: $color-white;
+            margin-left: 11px;
+        }
+
+        svg {
+            flex-shrink: 0;
+        }
+    }
+
+    &__content {
+        padding: 25px 16px 20px;
+    }
+
+    &__item-title {
+        margin: 0 0 12px;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 16px;
+        text-transform: uppercase;
+    }
+
+    &__item-text {
+        margin: 0 0 18px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        color: $color-card-text;
+    }
+
+    &__price {
+        margin: 0;
+        font-size: 16px;
+        line-height: 19px;
+        color: $color-accent;
+    }
+
+    &__more {
+        align-self: center;
+        margin: 48px 0 65px;
+        border: 1px solid $color-accent;
+        padding: 14px 13px;
+        max-width: 80%;
+        color: $color-accent;
+        min-width: 211px;
+    }
+}
+
+.advantages {
+    padding: 103px 0;
+    background-color: $color-main-dark2;
+
+    &__list {
+        margin: 0 -15px -30px;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        margin: 0 15px 30px;
+        width: calc(100% / 3 - 30px);
+    }
+
+    &__img {
+        margin-bottom: 28px;
+        text-align: center;
+    }
+
+    &__title {
+        max-width: 90%;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: #fbfbfb;
+        text-align: center;
+        margin: 0 auto 16px;
+    }
+
+    &__text {
+        max-width: 90%;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #fbfbfb;
+        margin: 0 auto;
     }
 }
 
